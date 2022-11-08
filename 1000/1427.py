@@ -1,0 +1,5 @@
+num = list(input())
+num.sort()
+num.reverse()
+num = "".join(num)
+print(num)
