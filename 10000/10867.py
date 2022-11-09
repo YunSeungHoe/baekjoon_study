@@ -1,0 +1,5 @@
+n = int(input())
+val = list(map(int, input().split()))
+val = set(val)
+val = list(val)
+print(*sorted(val))

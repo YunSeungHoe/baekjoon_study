@@ -1,0 +1,5 @@
+word = input()
+result = word.replace('XXXX', 'AAAA')
+result1 = result.replace('XX', 'BB')
+if 'X' in result1: print(-1)
+else: print(result1)
