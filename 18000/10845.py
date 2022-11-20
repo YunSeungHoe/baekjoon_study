@@ -1,23 +1,26 @@
+import sys
+input = sys.stdin.readline
 n = int(input())
 arr = []
 for _ in range(n):
     str = list(input())
-    if str[0] == 'p' and str[1] == 'u':
+    w = "".join(str[0:4])
+    if w == 'push':
         num = int("".join(str[5: len(str)]))
         arr.append(num)
-    elif str[0] == 'f':
-        if len(str) == 0: print(-1)
-        else: print(arr[0])
-    elif str[0] == 'b':
-        if len(str) == 0: print(-1)
+    elif w == 'back':
+        if len(arr) == 0: print(-1)
         else: print(arr[len(arr)-1])
-    elif str[0] == 's':
+    elif w == 'size':
         print(len(arr))
-    elif str[0] == 'p' and str[1] == 'o':
+    elif "".join(str[0:3]) == 'pop':
         if len(arr) == 0: print(-1)
         else: 
             print(arr[0])
             arr.pop(0)
-    elif str[0] == 'e':
+    elif "".join(str[0:5]) == 'front':
+        if len(arr) == 0: print(-1)
+        else: print(arr[0])
+    elif "".join(str[0:5]) == 'empty':
         if len(arr) == 0: print(1)
         else: print(0)
