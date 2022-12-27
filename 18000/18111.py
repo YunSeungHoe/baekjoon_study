@@ -1,3 +1,4 @@
+# using pypy3
 import sys
 row, col, b = map(int, sys.stdin.readline().split())
 m = []
