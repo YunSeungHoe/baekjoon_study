@@ -9,10 +9,12 @@ for i in range(n): net[i+1] = list()
 
 for _ in range(m):
     key, val = map(int, sys.stdin.readline().split())
-    if key > val: key, val = val, key
     temp = net[key]
     temp.append(val)
     net[key] = temp
+    temp = net[val]
+    temp.append(key)
+    net[val] = temp
 
 while len(queue) != 0:
     start = queue.pop(0)
