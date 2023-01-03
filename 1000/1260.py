@@ -1,19 +1,18 @@
 import sys, copy
 
-## dfs 는 연습
 def dfs(d, s):
     queue = []
     visit = []
     queue.append(s)
     while len(queue) != 0:
-        print(d)
-        now = queue.pop(0)
+        now = queue.pop()
         if not now in visit:
             visit.append(now)
-        if len(d[now]) == 0:
-            continue
-        if 
-            queue.append(d[now].pop(0))
+        for i in d[now]:
+            if i in visit:
+                continue
+            else:
+                queue.append(i)
     return visit
 
 def bfs(d, s):
@@ -43,7 +42,9 @@ for key in d:
     d[key].sort()
 
 d1 = d.copy()
+for key in d1:
+    d1[key] = sorted(d1[key], reverse=True)
 print(*dfs(d1, s))  
   
 d2 = d.copy()
-# print(*bfs(d2, s))    
+print(*bfs(d2, s))    
